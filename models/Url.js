@@ -6,7 +6,6 @@ const urlSchema = new mongoose.Schema({
     longUrl: String,
     shortUrl: String,
     urlCode: String,
-    // todo add a slug
     date: { type: String, default: Date.now() }
 });
 

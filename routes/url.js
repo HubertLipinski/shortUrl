@@ -8,7 +8,8 @@ const Url = require('../models/Url');
 
 // @route   POST /api/url/shorten
 router.post('/shorten', async (req, res) => {
-    const { longUrl } = req.body;
+    const { longUrl } = req.body
+    let { slug } = req.body;
     const baseUrl = config.get('baseUrl');
 
     if(!validUrl.isWebUri(baseUrl)) {
@@ -16,16 +17,36 @@ router.post('/shorten', async (req, res) => {
     }
 
     // Generate URL
-    const urlCode = shortid.generate();
+    let urlCode = shortid.generate();
+
+    console.log(urlCode, slug);
+
 
     if(validUrl.isWebUri(longUrl)) {
         try {
             let url = await Url.findOne({ longUrl });
 
-            if(url) {
+            let slugInUse = false;
+            if(req.body.slug) {
+                slug = req.body.slug
+                urlCode = slug;
+                slugInUse = await Url.exists({ urlCode: slug });
+            }
+
+            console.log(slugInUse, slug);
+
+            if(slugInUse) {
+                res.status(400).json('Slug in use'); 
+            }
+
+            if(url && typeof slug === 'undefined') {
                 res.json(url);
             } else {
-                const shortUrl = baseUrl + '/' + urlCode;
+                
+                let shortUrl = baseUrl + '/' + urlCode;
+                if(!slugInUse && typeof slug !== 'undefined') {
+                    shortUrl = baseUrl + '/' + slug;
+                }
 
                 url = new Url({
                     longUrl,
