@@ -3,5 +3,5 @@ Simple URL shortener service
 
 https://shrt.pl/
 
-POST /api/shorten
-  params: longUrl - String
+#### POST /api/shorten <br/>
+- longUrl - String
