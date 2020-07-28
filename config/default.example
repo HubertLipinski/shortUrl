@@ -1,4 +1,4 @@
 {
     "mongoURI": "DATABASE URL",
-    "baseUrl": "http://localhost:5000"
+    "baseUrl": "https://shrt-pl.herokuapp.com/"
 }
