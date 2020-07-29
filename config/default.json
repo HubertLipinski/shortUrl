@@ -1,4 +1,0 @@
-{
-    "mongoURI": "mongodb+srv://admin:ZCXbElGAGIH9Cw2x@shorturl.ow9il.mongodb.net/shortUrl?retryWrites=true&w=majority",
-    "baseUrl": "https://shrt.pl"
-}
