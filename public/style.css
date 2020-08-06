@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;1,300&display=swap');
+
+:root {
+    --body-bg-color: rgba(17,138,178, .2);
+    --body-font-color: #000;
+    --link-color: #13ace2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: var(--body-font-color);
+    background-color: var(--body-bg-color);
+    font-family: 'Work Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#app {
+    height: 75vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    margin-bottom: 15px;
+    font-size: 3.5rem;
+}
+
+h2 {
+    font-size: 1.2rem;
+}
+
+.form {
+    width: 50%;
+    position: relative;
+    height: 50px;
+    overflow: hidden;
+}
+
+.slug {
+    width: 25%;
+}
+
+.form input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    color: #121314;
+    font-size: 1em;
+    padding: 20px 0 5px 0px;
+    outline: none;
+}
+
+.form label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    background-color: var(--body-bg-color);
+}
+
+.form label::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 100%;
+    border-bottom: 3px solid #4ea8de;
+    transform: translateX(-100%);
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.content-name {
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.form input:focus + .label-name .content-name,
+.form input:valid + .label-name .content-name {
+    transform: translateY(-150%);
+    font-size: 15px;
+    color: #4ea8de;
+}
+
+.form input:focus + .label-name::after,
+.form input:valid + .label-name::after {
+    transform: translateX(0%);
+}
+
+.row {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+.row a {
+    display: block;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 0;
+    color: #407290;
+    margin: 20px 0;
+    transition: all 0.3s ease;
+}
+
+.row a:hover {
+    transform: scale(0.98);
+    color: var(--link-color);
+    text-decoration: underline;
+}
+
+.row .button {
+    padding: 15px 50px;
+    border: 1px solid #4ea8de;
+    font-size: 1em;
+    border-radius: 7px;
+    outline: none;
+    background-color: rgba(255,255,255, 0);
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.row .button:hover {
+    transform: scale(1.05);
+    background: #13ace2;
+    color: #fafafa;
+    cursor: pointer;
+}
+
+.pattern {
+    position: absolute;
+    bottom: 0;
+    z-index: -2;
+}
+
+.person {
+    max-width: 500px;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    right: 5vw;
+    z-index: -1;
+}
+
+.person img {
+    width: 75%;
+    height: auto;
+    z-index: -10;
+}
+
+footer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    position: absolute;
+    bottom: 0;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    z-index: 2;
+}
+
+.error {
+    margin: 20px 0;
+    color: crimson;
+    font-size: 1.1em;
+}
+
+.success {
+    margin: 20px 0;
+    color: #222222;
+    font-size: 1.1em;
+}
+
+/* media query */
+@media (max-width: 600px) {
+
+    .form {
+        width: 75vw;
+    }
+
+    .slug {
+        width: 50%;
+    }
+
+    .person {
+        right: 0;
+        left: 0;
+    }
+    .person img {
+        width: 100%;
+        height: 30vh;
+    }
+
+
+}
+
+.loader {
+    border: 5px solid #f3f3f3; /* Light grey */
+    border-top: 5px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

@@ -1,10 +1,14 @@
-const express = require('express');
+const express = require('express')
+const cors = require('cors')
 const connectDB = require('./config/db')
+const path = require('path')
 
 const app = express();
 connectDB();
 
 app.use(express.json({ extend: false }));
+app.use(cors());
+app.use(express.static('public'));
 
 // Routes
 app.use('/', require('./routes/index'));

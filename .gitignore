@@ -1,2 +1,4 @@
 default.json
 node_modules/
+.idea
+.env

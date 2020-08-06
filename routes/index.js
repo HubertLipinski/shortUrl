@@ -5,13 +5,14 @@ const Url = require('../models/Url');
 
 // @route   GET /
 router.get('/', (req, res) => {
-    res.json({
-        response: 'shrt.pl - be shrt and quick!', 
-        info: {
-            author: 'Hubert Lipiński',
-            repo: 'https://github.com/HubertLipinski/shortUrl'
-        }
-    })
+    res.sendFile('index.html');
+    // res.json({
+    //     response: 'shrt.pl - be shrt and quick!',
+    //     info: {
+    //         author: 'Hubert Lipiński',
+    //         repo: 'https://github.com/HubertLipinski/shortUrl'
+    //     }
+    // })
 })
 
 // @route   GET /:code
