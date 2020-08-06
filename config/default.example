@@ -1,4 +1,0 @@
-{
-    "mongoURI": "DATABASE URL",
-    "baseUrl": "http://localhost:5000"
-}
