@@ -1,5 +1,6 @@
 const express = require('express')
 const cors = require('cors')
+const secure = require('ssl-express-www')
 const connectDB = require('./config/db')
 const path = require('path')
 
@@ -8,6 +9,7 @@ connectDB();
 
 app.use(express.json({ extend: false }));
 app.use(cors());
+app.use(secure);
 app.use(express.static('public'));
 
 // Routes
