@@ -16,7 +16,7 @@ let app = new Vue({
         onSubmit() {
             this.loading = true;
             console.log(this.url, this.slug);
-            fetch('http://shrt.pl/api/url/shorten', {
+            fetch('https://shrt.pl/api/url/shorten', {
                 method: 'POST',
                 mode: 'cors',
                 headers: {
