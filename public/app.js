@@ -44,6 +44,7 @@ let app = new Vue({
                 message: ''
             };
             this.url = '';
+            this.slug = null;
         },
         triggerSlug: function() {
             this.displaySlugFrom = true;
