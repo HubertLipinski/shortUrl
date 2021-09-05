@@ -6,20 +6,12 @@ const Url = require('../models/Url');
 // @route   GET /
 router.get('/', (req, res) => {
     res.sendFile('index.html');
-    // res.json({
-    //     response: 'shrt.pl - be shrt and quick!',
-    //     info: {
-    //         author: 'Hubert Lipiński',
-    //         repo: 'https://github.com/HubertLipinski/shortUrl'
-    //     }
-    // })
 })
 
 // @route   GET /:code
 router.get('/:code', async (req, res) => {
     try {
         const url = await Url.findOne({ urlCode: req.params.code });
-
         if(url) {
             return res.redirect(url.longUrl);
         } else {

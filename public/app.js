@@ -15,8 +15,7 @@ let app = new Vue({
     methods: {
         onSubmit() {
             this.loading = true;
-            console.log(this.url, this.slug);
-            fetch('https://shrt.pl/api/url/shorten', {
+            fetch(`/api/url/shorten`, {
                 method: 'POST',
                 mode: 'cors',
                 headers: {
@@ -27,24 +26,26 @@ let app = new Vue({
             })
                 .then(response => response.json())
                 .then(data => {
-                    if (data.shortUrl)
-                        this.response = data;
-                    else this.error = {
-                        status: true,
-                        message: data
-                    };
+                    if (data.shortUrl) this.response = data;
+                    else this.error = { status: true,  message: data };
                     this.loading = false
                 })
                 .catch(err => {
-                    console.log(err);
-                    this.error = {
-                        status: true,
-                        message: err
-                    };
+                    this.error = { status: true, message: err };
                     this.loading = false
                 });
         },
-        trigerSlug: function() {
+        resetForm: function () {
+            this.loading = false;
+            this.response = false;
+            this.displaySlugFrom = false;
+            this.error = {
+                status: false,
+                message: ''
+            };
+            this.url = '';
+        },
+        triggerSlug: function() {
             this.displaySlugFrom = true;
         }
     },

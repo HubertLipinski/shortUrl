@@ -50,7 +50,6 @@ router.post('/shorten', async (req, res) => {
                 res.json(url);
             }
         } catch (error) {
-            console.error(error);
             res.status(500).json('Server error');
         }
     } else {
