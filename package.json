@@ -1,6 +1,6 @@
 {
   "name": "shortUrl",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,16 +11,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "config": "^3.3.1",
+    "config": "^3.3.6",
     "cors": "^2.8.5",
-    "dotenv": "^8.2.0",
+    "dotenv": "^8.6.0",
     "express": "^4.17.1",
-    "mongoose": "^5.9.25",
-    "shortid": "^2.2.15",
-    "ssl-express-www": "^3.0.7",
+    "mongoose": "^5.13.8",
+    "shortid": "^2.2.16",
+    "ssl-express-www": "^3.0.8",
     "valid-url": "^1.0.9"
   },
   "devDependencies": {
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.12"
   }
 }
