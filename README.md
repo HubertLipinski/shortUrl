@@ -4,7 +4,7 @@ ShortUrl is simple URL shortener service. <br>
 You can shorten any valid url link and customize it by giving special slug.
 
 ### How to use it?
-Visit **https://shrtpl.herokuapp.com/** and paste your link. That's it ;)
+Visit **<a href="https://shrtpl.herokuapp.com/" target="_blank">https://shrtpl.herokuapp.com/</a>** and paste your link. That's it ;)
 
 ## Tech stack:
 - **Backend:** Node.js, Express
